@@ -1,0 +1,38 @@
+<MainWidget>:
+    orientation: 'vertical'
+    padding: dp(8)
+    spacing: dp(8)
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(48)
+        spacing: dp(8)
+        Button:
+            text: root.start_btn_text
+            on_press: root.toggle_monitor()
+        Button:
+            text: 'Export CSV'
+            on_press: root.export_csv()
+
+    BoxLayout:
+        size_hint_y: 0.2
+        Label:
+            text: "Total Packets: " + str(root.total_packets)
+        Label:
+            text: "Last Packet Len: " + str(root.last_packet_len)
+
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgb: (0.1, 0.1, 0.1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        ScrollView:
+            do_scroll_x: False
+            GridLayout:
+                id: list_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height

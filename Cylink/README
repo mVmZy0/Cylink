@@ -1,0 +1,13 @@
+NetInspector - Mobile Network Monitor (Kivy + VpnService)
+
+How to build:
+1. Install python3, pip, git, openjdk, android sdk/ndk.
+2. pip install buildozer
+3. Put Java source in android/src/com/netinspector/
+4. Edit buildozer.spec (package name, requirements)
+5. buildozer android debug
+6. Deploy to device: buildozer android debug deploy run
+
+Usage:
+- On first run, press "Start Monitoring" then وافق على طلب VPN من النظام.
+- Export logs to /sdcard/...
